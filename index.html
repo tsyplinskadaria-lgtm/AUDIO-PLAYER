@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20260512155941" rel="stylesheet">
+
+	<link rel="stylesheet" href="./css/style.min.css?_v=20260512155941">
+	<title>AUDIO PLAYER</title>
+</head>
+
+<body>
+	<div class="wrapper">
+
+
+		<div class="wrapper-container">
+			<div class="player-wrapper">
+
+				<div class="player" id="player">
+
+					<div class="player__content">
+
+						<!-- TOP -->
+						<div class="player__top" id="playerTop">
+
+							<h1 class="player__title" id="artist">
+
+							</h1>
+
+							<p class="player__subtitle" id="title">
+
+							</p>
+
+						</div>
+
+						<!-- COVER -->
+						<div class="player__cover-wrap" id="coverWrap">
+
+							<div class="player__cover">
+								<img id="cover" draggable="false" src="https://picsum.photos/id/1011/800/800" alt="">
+							</div>
+
+							<div class="player__top show-on-photo">
+
+								<h1 class="player__title" id="artistPhoto">
+
+								</h1>
+
+								<p class="player__subtitle" id="titlePhoto">
+
+								</p>
+
+							</div>
+
+						</div>
+
+						<!-- TIME -->
+						<div class="player__time">
+
+							<span id="current">
+								00:00
+							</span>
+
+							<span id="duration">
+								00:00
+							</span>
+
+						</div>
+
+						<!-- CONTROLS -->
+						<div class="player__controls">
+
+							<button class="player__btn" id="prev">
+								<img src="img/svg/left-btn.svg" draggable="false" alt="">
+							</button>
+
+							<button class="player__btn" id="play">
+								<img class="icon-play" src="img/svg/play.svg" draggable="false" alt="">
+								<img class="icon-pause" src="img/svg/pause.svg" draggable="false" alt="">
+							</button>
+
+							<button class="player__btn" id="next">
+								<img src="img/svg/right-btn.svg" draggable="false" alt="">
+							</button>
+
+						</div>
+
+						<!-- PROGRESS -->
+						<div class="player__progress" id="progressContainer">
+							<div class="player__progress-filled" id="progress"></div>
+							<div class="player__progress-thumb" id="thumb"></div>
+						</div>
+
+						<!-- PLAYLIST BUTTON -->
+						<button class="player__playlist-btn" id="playlistBtn">
+							<img src="img/svg/list.svg" draggable="false" alt="">
+						</button>
+
+					</div>
+
+					<!-- PLAYLIST -->
+					<div class="playlist" id="playlist">
+
+						<div class="playlist__handle"></div>
+
+						<div class="playlist__tracks" id="playlistTracks"></div>
+
+					</div>
+
+				</div>
+
+				<!-- AUDIO -->
+				<audio id="audio"></audio>
+
+				<!-- TRACK DATA -->
+				<div class="tracks-data">
+
+					<div class="tracks-data__item" data-title="Сродна історія" data-artist="Григорій Сковорода" data-time="" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/pic-01.webp">
+					</div>
+
+					<div class="tracks-data__item" data-title="Думки про світ" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/skovoroda.webp">
+					</div>
+
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/skovoroda.webp">
+					</div>
+
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="04:39" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/skovoroda.webp">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="js/app.min.js?_v=20260512155941"></script>
+</body>
+
+</html>
