@@ -92,19 +92,48 @@
         playTrack();
     }));
     audio.addEventListener("timeupdate", (() => {
-        if (!audio.duration) return;
-        const percent = audio.currentTime / audio.duration * 100;
-        progress.style.width = `${percent}%`;
-        currentEl.textContent = formatTime(audio.currentTime);
-        durationEl.textContent = formatTime(audio.duration);
+        if (!audio.duration || isSeeking) return;
+        updateProgressUI(audio.currentTime);
     }));
-    progressContainer.addEventListener("click", (e => {
+    function updateProgressUI(time) {
+        const percent = time / audio.duration * 100;
+        progress.style.width = `${percent}%`;
+        thumb.style.left = `${percent}%`;
+        currentEl.textContent = formatTime(time);
+        durationEl.textContent = formatTime(audio.duration);
+    }
+    let isSeeking = false;
+    function seek(e) {
         if (!audio.duration) return;
         const rect = progressContainer.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const percent = clickX / rect.width;
-        audio.currentTime = percent * audio.duration;
-    }));
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        let percent = (clientX - rect.left) / rect.width;
+        percent = Math.max(0, Math.min(1, percent));
+        const seekTime = percent * audio.duration;
+        progress.style.width = `${percent * 100}%`;
+        thumb.style.left = `${percent * 100}%`;
+        currentEl.textContent = formatTime(seekTime);
+        audio.currentTime = seekTime;
+    }
+    function startSeek(e) {
+        isSeeking = true;
+        seek(e);
+        document.addEventListener("mousemove", seek);
+        document.addEventListener("touchmove", seek);
+        document.addEventListener("mouseup", stopSeek);
+        document.addEventListener("touchend", stopSeek);
+    }
+    function stopSeek() {
+        isSeeking = false;
+        document.removeEventListener("mousemove", seek);
+        document.removeEventListener("touchmove", seek);
+        document.removeEventListener("mouseup", stopSeek);
+        document.removeEventListener("touchend", stopSeek);
+    }
+    progressContainer.addEventListener("mousedown", startSeek);
+    progressContainer.addEventListener("touchstart", startSeek, {
+        passive: true
+    });
     function renderPlaylist() {
         playlistTracks.innerHTML = "";
         tracks.forEach(((track, index) => {

@@ -495,15 +495,15 @@ body {
 .tracks-data {
   display: none
 }
-@media (max-width:400px) {
+@media (max-width:425px) {
   .player__top {
-    padding: 50px 15px 0 15px
+    padding: 40px 15px 0 15px
   }
   .player__cover {
-    height: 420px
+    height: 370px
   }
   .player__cover-wrap {
-    height: 420px
+    height: 370px
   }
   .player__btn {
     height: 110px
@@ -532,5 +532,14 @@ body {
   }
   .playlist * {
     font-size: 14px
+  }
+}
+@media (max-width:350px) {
+  .player__btn {
+    height: 90px
+  }
+  .player__btn img {
+    width: 25px;
+    height: 28px
   }
 }
