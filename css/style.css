@@ -337,8 +337,8 @@ body.no-scroll {
 }
 .show-on-photo {
   position: absolute;
-  left: 35px;
-  bottom: 20px;
+  left: 30px;
+  bottom: 16px;
   z-index: 5;
   opacity: 0;
   visibility: hidden;
@@ -353,7 +353,7 @@ body.no-scroll {
   font-family: Roboto;
   padding: 0 20px;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 80%
 }
 .player__progress {
@@ -392,7 +392,7 @@ body.no-scroll {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 6.85px;
-  padding: 0 20px
+  padding: 0 19px
 }
 .player__btn {
   border: none;
@@ -848,6 +848,15 @@ body.no-scroll {
   }
   .player__cover-wrap {
     height: 320px
+  }
+  .player__time {
+    padding: 0 15px
+  }
+  .player__progress {
+    margin-inline: 15px
+  }
+  .player__controls {
+    padding: 0 15px
   }
   .playlist-track img {
     width: 42px;
