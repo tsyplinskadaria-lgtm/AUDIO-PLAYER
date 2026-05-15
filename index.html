@@ -7,9 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20260513124223" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;900&family=Roboto:wght@300;400;600&family=Roboto+Condensed:ital,wght@1,700&display=swap&_v=20260515204815" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260515204815">
 
-	<link rel="stylesheet" href="./css/style.min.css?_v=20260513124223">
+	<link rel="stylesheet" href="./css/style.min.css?_v=20260515204815">
 	<title>AUDIO PLAYER</title>
 </head>
 
@@ -20,9 +21,33 @@
 		<div class="wrapper-container">
 			<div class="player-wrapper">
 
+				<div class="preloader">
+					<div class="preloader-bg">
+						<!-- IMAGE -->
+						<img src="img/main/preloader-bg.webp" alt="">
+
+						<!-- GIF -->
+						<!-- <img src="img/main/example.webp" alt=""> -->
+
+						<!-- VIDEO -->
+						<!-- <video autoplay muted loop playsinline>
+							<source src="img/video/preloader-video.mp4" type="video/mp4">
+						</video> -->
+
+					</div>
+
+					<img src="img/svg/logo.svg" class="logo" draggable="false" alt="Logo">
+
+					<button class="open-player">слухати історію</button>
+				</div>
+
 				<div class="player" id="player">
 
 					<div class="player__content">
+
+						<div class="bookmark">
+							SRODNA. <br> STORY
+						</div>
 
 						<!-- TOP -->
 						<div class="player__top" id="playerTop">
@@ -75,16 +100,48 @@
 						<div class="player__controls">
 
 							<button class="player__btn" id="prev">
-								<img src="img/svg/left-btn.svg" draggable="false" alt="">
+								<svg viewBox="0 0 91 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect y="5.5498" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect y="5.5498" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect y="5.5498" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect y="5.5498" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect y="5.5498" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<path d="M14.7696 58.6588C12.4251 56.8074 12.4251 53.252 14.7696 51.4005L63.0317 13.2876C66.0641 10.8928 70.522 13.0527 70.522 16.9167L70.522 93.1426C70.522 97.0066 66.0641 99.1665 63.0316 96.7718L14.7696 58.6588Z" fill="var(--player-btn-color)" />
+								</svg>
+
 							</button>
 
 							<button class="player__btn" id="play">
-								<img class="icon-play" src="img/svg/play.svg" draggable="false" alt="">
-								<img class="icon-pause" src="img/svg/pause.svg" draggable="false" alt="">
+
+								<svg class="icon-play" viewBox="0 0 58 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M55.7526 39.1168C58.0971 40.9683 58.0971 44.5237 55.7526 46.3751L7.49055 84.4881C4.45811 86.8828 0.000217012 84.7229 0.000217181 80.8589L0.000220513 4.63302C0.000220682 0.769013 4.45813 -1.39088 7.49057 1.00386L55.7526 39.1168Z" fill="var(--player-btn-color)" />
+								</svg>
+
+								<svg class="icon-pause" viewBox="0 0 48 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect x="36.9951" y="0.00012207" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect x="36.9951" y="0.00012207" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect x="36.9951" y="0.00012207" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect x="36.9951" y="0.00012207" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+									<rect x="36.9951" y="0.00012207" width="10.1736" height="98.9613" rx="5.0868" fill="var(--player-btn-color)" />
+								</svg>
+
 							</button>
 
 							<button class="player__btn" id="next">
-								<img src="img/svg/right-btn.svg" draggable="false" alt="">
+								<svg width="91" height="111" viewBox="0 0 91 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="90.6372" y="104.511" width="10.1736" height="98.9613" rx="5.0868" transform="rotate(-180 90.6372 104.511)" fill="var(--player-btn-color)" />
+									<rect x="90.6372" y="104.511" width="10.1736" height="98.9613" rx="5.0868" transform="rotate(-180 90.6372 104.511)" fill="var(--player-btn-color)" />
+									<rect x="90.6372" y="104.511" width="10.1736" height="98.9613" rx="5.0868" transform="rotate(-180 90.6372 104.511)" fill="var(--player-btn-color)" />
+									<rect x="90.6372" y="104.511" width="10.1736" height="98.9613" rx="5.0868" transform="rotate(-180 90.6372 104.511)" fill="var(--player-btn-color)" />
+									<rect x="90.6372" y="104.511" width="10.1736" height="98.9613" rx="5.0868" transform="rotate(-180 90.6372 104.511)" fill="var(--player-btn-color)" />
+									<path d="M75.8683 51.4007C78.2128 53.2522 78.2128 56.8076 75.8683 58.6591L27.6063 96.772C24.5739 99.1667 20.116 97.0068 20.116 93.1428L20.116 16.9169C20.116 13.0529 24.5739 10.893 27.6063 13.2878L75.8683 51.4007Z" fill="var(--player-btn-color)" />
+								</svg>
+
 							</button>
 
 						</div>
@@ -114,21 +171,161 @@
 				</div>
 
 				<!-- AUDIO -->
+
 				<audio id="audio"></audio>
 
 				<!-- TRACK DATA -->
+
 				<div class="tracks-data">
 
-					<div class="tracks-data__item" data-title="Сродна історія" data-artist="Григорій Сковорода" data-time="" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/pic-01.webp">
+					<div class="tracks-data__item" data-title="Сродна історія" data-artist="Григорій Сковорода" data-time="" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/pic-02.webp">
 					</div>
 
-					<div class="tracks-data__item" data-title="Думки про світ" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/skovoroda.webp">
+					<div class="tracks-data__item" data-title="Думки про світ" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/pic-02.webp">
 					</div>
 
 					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/example.gif">
 					</div>
 
-					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="04:39" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/skovoroda.webp">
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="04:39" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/pic-02.webp">
+					</div>
+
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/example.webp">
+					</div>
+				</div>
+
+				<!--  -->
+
+				<div class="slider reading">
+					<span class="title">ЧИТАННЯ</span>
+
+					<div class="slider__reading swiper">
+						<div class="swiper-wrapper">
+							<div class="slider__slide swiper-slide">
+								<img src="img/main/reading-01.webp" draggable="false" alt="">
+							</div>
+
+							<div class="slider__slide swiper-slide">
+								<img src="img/main/reading-02.webp" draggable="false" alt="">
+							</div>
+
+							<div class="slider__slide swiper-slide">
+								<img src="img/main/reading-03.webp" draggable="false" alt="">
+							</div>
+
+							<div class="slider__slide swiper-slide">
+								<img src="img/main/reading-04.webp" draggable="false" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<section class="transition-screen">
+
+					<div class="transition-screen__bg">
+
+						<!-- Фото -->
+						<img src="img/main/design-bg.webp" draggable="false" alt="">
+
+						<!-- Відео -->
+						<!--
+							<video autoplay muted loop playsinline>
+								<source src="./video/bg.mp4" type="video/mp4">
+							</video>
+						-->
+
+					</div>
+
+				</section>
+
+				<section class="slider figures">
+					<div class="slider__inner">
+						<div class="slider__figures swiper">
+							<div class="swiper-wrapper">
+
+								<div class="slider__slide swiper-slide">
+									<span class="title">ТАРАС ШЕВЧЕНКО</span>
+
+									<img src="img/slider/Shevchenko-01.webp" draggable="false" alt="">
+
+									<a href="#!" class="buy-btn">ЗАМОВИТИ</a>
+
+									<div class="swiper-pagination"></div>
+								</div>
+
+								<div class="slider__slide swiper-slide text-block">
+									<img src="img/slider/Shevchenko-02.webp" draggable="false" alt="">
+								</div>
+
+								<div class="slider__slide swiper-slide">
+									<img src="img/slider/Shevchenko-03.webp" draggable="false" alt="">
+
+									<a href="#!" class="buy-btn">ЗАМОВИТИ</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="slider figures">
+					<div class="slider__inner">
+						<div class="slider__figures swiper">
+							<div class="swiper-wrapper">
+
+								<div class="slider__slide swiper-slide">
+									<span class="title">МИКОЛА ЛЕОНТОВИЧ</span>
+
+									<img src="img/slider/Leontovich-01.webp" draggable="false" alt="">
+
+									<a href="#!" class="buy-btn">ЗАМОВИТИ</a>
+
+									<div class="swiper-pagination"></div>
+								</div>
+
+								<div class="slider__slide swiper-slide text-block">
+									<img src="img/slider/Leontovich-02.webp" draggable="false" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="slider figures">
+					<div class="slider__inner">
+						<div class="slider__figures swiper">
+							<div class="swiper-wrapper">
+
+								<div class="slider__slide swiper-slide">
+									<span class="title">ГЕОРГІЙ НАРБУТ</span>
+
+									<img src="img/slider/Narbut-01.webp" draggable="false" alt="">
+
+									<a href="#!" class="buy-btn">ЗАМОВИТИ</a>
+
+									<div class="swiper-pagination"></div>
+								</div>
+
+								<div class="slider__slide swiper-slide text-block">
+									<img src="img/slider/Narbut-02.webp" draggable="false" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+				<div class="footer">
+
+					<div class="footer-email">
+						<a href="#!" aria-label="користувацька угода">користувацька угода</a>
+						<a href="#!" aria-label="ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
+					</div>
+
+					<a href="malto:friends@srodna.com" aria-label="friends@srodna.com">friends@srodna.com</a>
+
+					<div class="logo">
+						<img src="../img/svg/logo.svg" draggable="false" alt="Logo">
 					</div>
 				</div>
 
@@ -138,7 +335,10 @@
 
 	</div>
 
-	<script src="js/app.min.js?_v=20260513124223"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260515204815"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20260515204815"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20260515204815"></script>
+	<script src="js/app.min.js?_v=20260515204815"></script>
 </body>
 
 </html>
