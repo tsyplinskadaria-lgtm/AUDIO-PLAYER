@@ -251,7 +251,7 @@
     });
     gsap.utils.toArray(".slider.figures").forEach((section => {
         gsap.fromTo(section, {
-            y: 60,
+            y: 0,
             opacity: 1
         }, {
             y: 0,
@@ -259,7 +259,7 @@
             ease: "none",
             scrollTrigger: {
                 trigger: section,
-                start: "top 80%",
+                start: "top 20%",
                 end: "top 40%",
                 scrub: true
             }

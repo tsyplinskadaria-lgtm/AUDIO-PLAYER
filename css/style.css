@@ -771,10 +771,12 @@ body.no-scroll {
   color: #fff
 }
 .design-bg {
-  background-attachment: local;
-  height: 100vh
+  position: relative;
+  width: 100%;
+  overflow: hidden
 }
 .design-bg img {
+  display: block;
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -782,12 +784,19 @@ body.no-scroll {
 }
 .transition-screen {
   position: relative;
+  padding: 0;
+  margin: 0;
   height: 100vh
 }
 .transition-screen__bg {
   position: relative;
   height: 100vh;
   z-index: 0
+}
+.transition-screen,
+.transition-screen__bg {
+  width: 100%;
+  left: 0
 }
 .transition-screen__bg img {
   width: 100%;
@@ -869,5 +878,10 @@ body.no-scroll {
   .player__btn svg {
     width: 25px;
     height: 28px
+  }
+  .preloader .open-player {
+    font-size: 22px;
+    bottom: 35px;
+    padding: 15px 10px
   }
 }
