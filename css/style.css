@@ -175,14 +175,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   padding: 26px 15px;
   background-color: var(--secondary-bg)
 }
 .footer-email {
   display: flex;
   flex-direction: column;
-  gap: 5px
+  gap: 15px
 }
 .footer * {
   font-family: Roboto;
@@ -192,6 +192,9 @@ html {
   letter-spacing: -3%;
   text-transform: uppercase;
   color: #fff
+}
+.footer .email {
+  font-size: 12px
 }
 .footer a {
   transition: color .1s ease-in-out
@@ -279,7 +282,8 @@ body.no-scroll {
   font-weight: 600
 }
 .artist-last {
-  font-weight: 300
+  font-weight: 300;
+  text-transform: uppercase
 }
 .player.playlist-open>.player__content>.player__top {
   opacity: 0;
@@ -442,16 +446,35 @@ body.no-scroll {
   width: 100%;
   height: 0;
   background: var(--secondary-bg);
-  transition: height .25s ease;
-  overflow: hidden;
-  touch-action: none;
-  z-index: 50;
+  border-radius: 20px 20px 0 0;
   display: flex;
   flex-direction: column;
-  border-radius: 20px 20px 0 0
+  overflow: hidden;
+  z-index: 50;
+  transition: height .25s ease;
+  touch-action: auto
 }
 .playlist.active {
-  height: 35vh
+  height: 42vh
+}
+.playlist__handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  cursor: -webkit-grab;
+  cursor: grab;
+  touch-action: none
+}
+.playlist__handle:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing
+}
+.playlist__handle .line {
+  width: 36px;
+  height: 5px;
+  background: rgba(255,255,255,.3);
+  border-radius: 10px
 }
 .playlist__tracks {
   flex: 1;
@@ -483,26 +506,6 @@ body.no-scroll {
 .playlist__tracks::-webkit-scrollbar-corner {
   background: rgba(0,0,0,0)
 }
-.playlist__handle {
-  width: 34px;
-  height: 5px;
-  background: rgba(255,255,255,.3019607843);
-  margin: 16px auto 18px;
-  flex-shrink: 0;
-  cursor: -webkit-grab;
-  cursor: grab
-}
-.playlist__handle:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing
-}
-.playlist__tracks {
-  overflow: auto;
-  padding: 0 14px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px
-}
 .playlist-track {
   display: flex;
   align-items: center;
@@ -522,33 +525,33 @@ body.no-scroll {
 .playlist-track__info {
   display: flex;
   align-items: end;
-  gap: 13px
+  gap: 12px
 }
 .playlist-track__content {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 6px;
   min-width: 0
 }
 .playlist-track__time {
-  padding-left: 15px;
-  position: relative
+  position: relative;
+  padding-left: 14px;
+  opacity: .8
 }
 .playlist-track__time::after {
+  content: "";
   position: absolute;
-  top: 50%;
   left: 0;
+  top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 4px;
   height: 4px;
-  background: #fff;
-  content: ""
+  border-radius: 50%;
+  background: #fff
 }
-.playlist * {
-  font-family: Roboto;
-  font-size: 16px;
-  color: #fff
+.playlist {
+  will-change: height
 }
 .tracks-data {
   display: none
@@ -646,8 +649,26 @@ body.no-scroll {
   object-fit: contain
 }
 .reading .swiper {
-  overflow: visible;
+  overflow: hidden;
   padding: 0 14px
+}
+.reading .slider__reading {
+  overflow: visible;
+  position: relative
+}
+.reading .swiper-slide {
+  position: relative;
+  will-change: transform
+}
+.reading .slider__slide.swiper-slide-next {
+  transition: z-index .5s ease,-webkit-transform .5s ease;
+  transition: transform .5s ease,z-index .5s ease;
+  transition: transform .5s ease,z-index .5s ease,-webkit-transform .5s ease
+}
+.reading .slider__slide.swiper-slide-next.intro-peek {
+  -webkit-transform: translateX(-130px)!important;
+  transform: translateX(-130px)!important;
+  z-index: 999!important
 }
 .reading .slider__slide img {
   width: 100%;
@@ -715,6 +736,7 @@ body.no-scroll {
   left: 0;
   width: 100%;
   min-height: 100vh;
+  height: 100vh;
   z-index: 99
 }
 .preloader-bg {
@@ -744,7 +766,7 @@ body.no-scroll {
 }
 .preloader .open-player {
   position: absolute;
-  bottom: 54px;
+  bottom: 80px;
   left: 50%;
   -webkit-transform: translate(-50%);
   transform: translate(-50%);
@@ -814,6 +836,9 @@ body.no-scroll {
   .footer * {
     font-size: 7px
   }
+  .footer .email {
+    font-size: 8.5px
+  }
   .footer .logo {
     width: 84px
   }
@@ -862,9 +887,6 @@ body.no-scroll {
     width: 42px;
     height: 42px
   }
-  .playlist * {
-    font-size: 14px
-  }
   .reading .title {
     font-size: 22px;
     padding: 8px 14px 8px 25px;
@@ -890,7 +912,12 @@ body.no-scroll {
   }
   .preloader .open-player {
     font-size: 22px;
-    bottom: 35px;
+    bottom: 80px;
     padding: 15px 10px
+  }
+}
+@media (max-width:340px) {
+  .footer .email {
+    font-size: 7px
   }
 }

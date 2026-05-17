@@ -7,10 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;900&family=Roboto:wght@300;400;600&family=Roboto+Condensed:ital,wght@1,700&display=swap&_v=20260515204815" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260515204815">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;900&family=Roboto:wght@300;400;600&family=Roboto+Condensed:ital,wght@1,700&display=swap&_v=20260517183600" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260517183600">
 
-	<link rel="stylesheet" href="./css/style.min.css?_v=20260515204815">
+	<link rel="stylesheet" href="./css/style.min.css?_v=20260517183600">
 	<title>AUDIO PLAYER</title>
 </head>
 
@@ -66,7 +66,7 @@
 						<div class="player__cover-wrap" id="coverWrap">
 
 							<div class="player__cover">
-								<img id="cover" fetchpriority="high" loading="eager" decoding="async" draggable="false" src="https://picsum.photos/id/1011/800/800" alt="">
+								<img id="cover" draggable="false" src="https://picsum.photos/id/1011/800/800" alt="">
 							</div>
 
 							<div class="player__top show-on-photo">
@@ -162,7 +162,9 @@
 					<!-- PLAYLIST -->
 					<div class="playlist" id="playlist">
 
-						<div class="playlist__handle"></div>
+						<div class="playlist__handle">
+							<span class="line"></span>
+						</div>
 
 						<div class="playlist__tracks" id="playlistTracks"></div>
 
@@ -184,13 +186,13 @@
 					<div class="tracks-data__item" data-title="Думки про світ" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/pic-02.webp">
 					</div>
 
-					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/example.gif">
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/example.webp">
 					</div>
 
 					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="04:39" data-src="img/audio/Sting - Shape Of My Heart.mp3" data-cover="img/main/pic-02.webp">
 					</div>
 
-					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/pic-02.webp">
+					<div class="tracks-data__item" data-title="Нерівна Рівність" data-artist="Григорій Сковорода" data-time="03:06" data-src="img/audio/Монашки.mp3" data-cover="img/main/example.webp">
 					</div>
 				</div>
 
@@ -322,11 +324,11 @@
 						<a href="#!" aria-label="ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
 					</div>
 
-					<a href="malto:friends@srodna.com" aria-label="friends@srodna.com">friends@srodna.com</a>
+					<a href="malto:friends@srodna.com" class="email" aria-label="friends@srodna.com">friends@srodna.com</a>
 
-					<div class="logo">
-						<img src="img/svg/logo.svg" draggable="false" alt="Logo">
-					</div>
+					<a href="#player" aria-label="logo" class="logo">
+						<img src="../img/svg/logo.svg" draggable="false" alt="Logo">
+					</a>
 				</div>
 
 			</div>
@@ -335,10 +337,10 @@
 
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260515204815"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20260515204815"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20260515204815"></script>
-	<script src="js/app.min.js?_v=20260515204815"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260517183600"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20260517183600"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20260517183600"></script>
+	<script src="js/app.min.js?_v=20260517183600"></script>
 </body>
 
 </html>
